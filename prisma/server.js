@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 
 app.use(bodyParser.json());
 
-// POST /api/members
+// POST link and method /api/members
 app.post('/api/members', async (req, res) => {
   const { name, role } = req.body;
 
@@ -36,7 +36,7 @@ app.post('/api/members', async (req, res) => {
   }
 });
 
-// GET /api/projects/:id/members
+// GET link and method /api/projects/:id/members
 app.get('/api/projects/:id/members', async (req, res) => {
   const { id } = req.params;
 
@@ -62,8 +62,6 @@ app.get('/api/projects/:id/members', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while retrieving members.' });
   }
 });
-
-// ... existing routes will go here ...
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
